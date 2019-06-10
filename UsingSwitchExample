@@ -1,0 +1,42 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+/**
+ *
+ * @author nabina
+ */
+import java.util.Scanner;
+public class UsingSwitchExample
+{
+   public static void main(String[] args)
+   {
+    String month;
+    Scanner input=new Scanner(System.in);
+    System.out.println("Enter a month name:");
+    month=input.nextLine();
+   switch(month)
+           {
+            case "December":
+            case "January":
+            case "Feburaary":
+                System.out.println("Winter");
+                break;
+            case "March":
+            case "April":
+            case  "May":
+                System.out.println(" Spring");
+                break;
+            case "June":
+            case "July":
+            case"August":
+                System.out.println(" Summer");
+                break;
+            default:
+                System.out.println("Fall or Autumn ");      
+           }
+   
+   }
+}
