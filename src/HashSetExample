@@ -1,0 +1,34 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package HashSet;
+/**
+ *
+ * @author nabina
+ */
+import java.util.HashSet;
+import java.util.Set;
+public class HashSetExample 
+{
+  public static void main(String[]args) 
+   {
+      Set<String> monthsOfYear=new HashSet<>();
+       // Adding new elements to the HashSet
+      monthsOfYear.add("Jan");
+      monthsOfYear.add("Feb");
+      monthsOfYear.add("Mar");
+      monthsOfYear.add("Apr");
+      monthsOfYear.add("May");
+      monthsOfYear.add("June");
+      monthsOfYear.add("July");
+      monthsOfYear.add("Aug");
+      monthsOfYear.add("Sep");
+      monthsOfYear.add("Oct");
+      monthsOfYear.add("Nov");
+      monthsOfYear.add("Dec");
+      monthsOfYear.add("Mar");  // Adding duplicate elements will be ignored
+      System.out.println(monthsOfYear);
+    }
+ }
