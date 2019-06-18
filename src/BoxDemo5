@@ -1,0 +1,38 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+/**
+ *
+ * @author nabina
+ */
+class Box
+{
+    double width, height, depth;
+    double volume()
+    {
+        return width * height * depth;
+    }
+    void setDim(double w, double h, double d)
+    {
+        width=w;
+        height=h;
+        depth=d;    
+    }   
+}
+public class BoxDemo5
+{
+  public static void main(String[]args)
+  {
+      Box obj1= new Box();
+      Box obj2= new Box();
+      double vol;
+      obj1.setDim( 10,20,15);
+      obj2.setDim(3,6,9);
+      vol= obj1.volume();
+      System.out.println( " volume is " + vol);
+      vol= obj2.volume();
+      System.out.println( " volume is " + vol);
+  }
+}
