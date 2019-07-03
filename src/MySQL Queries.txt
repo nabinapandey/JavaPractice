@@ -1,0 +1,135 @@
+
+mysql> create table customer(customerNo int(4) not null primary key,Name varchar(25), Address varchar(25));
+Query OK, 0 rows affected (0.11 sec)
+
+
+mysql> create table Account(AccountNo int(15) not null primary key, Balance double(16,08), Branch varchar(50));
+Query OK, 0 rows affected (0.13 sec)
+
+mysql> create table Branch(Manager varchar(60), Address varchar(80));
+Query OK, 0 rows affected (0.12 sec)
+
+mysql> create table Registration(Customerid int not null,AccountNo int not null, foreign key(Customerid) references customer(customerNo), foreign key(AccountNo) references Account(AccountNo));
+Query OK, 0 rows affected (0.17 sec)
+
+mysql> insert into customer values(1,"Bipana", "california");
+Query OK, 1 row affected (0.06 sec)
+
+mysql> insert into customer values(2,"Kathy", "Colorado");
+Query OK, 1 row affected (0.14 sec)
+
+mysql> insert into customer values(3,"James", "Dallas");
+Query OK, 1 row affected (0.07 sec)
+
+mysql> insert into customer values(4,"Frank", "Minneapolish");
+Query OK, 1 row affected (0.33 sec)
+
+mysql> insert into customer values(5,"Justin", "Sioux falls");
+Query OK, 1 row affected (0.05 sec)
+
+mysql> insert into Account values(502,70000,"Northbranch");
+Query OK, 1 row affected (0.06 sec)
+
+mysql> insert into Account values(404,60000,"Downtown");
+Query OK, 1 row affected (0.08 sec)
+
+mysql> insert into Account values(9104,4000,"Westbranch");
+Query OK, 1 row affected (0.06 sec)
+
+mysql> insert into Account values(609,50000,"Eastbranch");
+Query OK, 1 row affected (0.07 sec)
+
+mysql> insert into Account values(8088,30000,"Mainbranch");
+Query OK, 1 row affected (0.05 sec)
+
+mysql> insert into Branch values("Sioux falls", "Cassandra");
+Query OK, 1 row affected (0.06 sec)
+
+mysql> insert into Branch values("Colorado", "Amy");
+Query OK, 1 row affected (0.06 sec)
+
+mysql> insert into Branch values("Sioux falls", "James");
+Query OK, 1 row affected (0.06 sec)
+
+mysql> insert into Branch values("Boston", "Patrick");
+Query OK, 1 row affected (0.33 sec)
+
+mysql> insert into Branch values("Florida", "Nabina");
+Query OK, 1 row affected (0.06 sec)
+
+mysql> show tables;
++---------------------+
+| Tables_in_lotusbank |
++---------------------+
+| account             |
+| branch              |
+| customer            |
+| registration        |
++---------------------+
+4 rows in set (0.00 sec)
+
+mysql> desc registration;
++------------+---------+------+-----+---------+-------+
+| Field      | Type    | Null | Key | Default | Extra |
++------------+---------+------+-----+---------+-------+
+| Customerid | int(11) | NO   | MUL | NULL    |       |
+| AccountNo  | int(11) | NO   | MUL | NULL    |       |
++------------+---------+------+-----+---------+-------+
+2 rows in set (0.08 sec)
+
+
+mysql> select * from customer;
++------------+--------+--------------+
+| customerNo | Name   | Address      |
++------------+--------+--------------+
+|          1 | Bipana | california   |
+|          2 | Kathy  | Colorado     |
+|          3 | James  | Dallas       |
+|          4 | Frank  | Minneapolish |
+|          5 | Justin | Sioux falls  |
++------------+--------+--------------+
+5 rows in set (0.00 sec)
+
+mysql> desc account;
++-----------+--------------+------+-----+---------+-------+
+| Field     | Type         | Null | Key | Default | Extra |
++-----------+--------------+------+-----+---------+-------+
+| AccountNo | int(15)      | NO   | PRI | NULL    |       |
+| Balance   | double(16,8) | YES  |     | NULL    |       |
+| Branch    | varchar(50)  | YES  |     | NULL    |       |
++-----------+--------------+------+-----+---------+-------+
+3 rows in set (0.02 sec)
+
+mysql> desc customer;
++------------+-------------+------+-----+---------+-------+
+| Field      | Type        | Null | Key | Default | Extra |
++------------+-------------+------+-----+---------+-------+
+| customerNo | int(4)      | NO   | PRI | NULL    |       |
+| Name       | varchar(25) | YES  |     | NULL    |       |
+| Address    | varchar(25) | YES  |     | NULL    |       |
++------------+-------------+------+-----+---------+-------+
+3 rows in set (0.02 sec)
+
+mysql>  select * from Account;
++-----------+----------------+-------------+
+| AccountNo | Balance        | Branch      |
++-----------+----------------+-------------+
+|       404 | 60000.00000000 | Downtown    |
+|       502 | 70000.00000000 | Northbranch |
+|       609 | 50000.00000000 | Eastbranch  |
+|      8088 | 30000.00000000 | Mainbranch  |
+|      9104 |  4000.00000000 | Westbranch  |
++-----------+----------------+-------------+
+5 rows in set (0.00 sec)
+
+mysql> delete from account;
+Query OK, 5 rows affected (0.07 sec)
+
+
+mysql> insert into registration values(1,502);
+Query OK, 1 row affected (0.05 sec)
+
+mysql> insert into registration values(4,9104);
+Query OK, 1 row affected (0.06 sec)
+
+
