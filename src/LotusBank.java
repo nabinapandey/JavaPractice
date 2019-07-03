@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-// Auther: Nabina Pandey 
+// Author: Nabina Pandey 
 package databaseconnectivity;
 
 import java.sql.*;
